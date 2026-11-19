@@ -7,15 +7,7 @@ terraform {
   }
 }
 
-variable "apim_token" {
-  type      = string
-  sensitive = true
-}
-
-provider "apim" {
-  server_url  = "https://org-gravitee-ps-partner-enablement.eu.c479c6.gamma-api.gravitee.io/automation"
-  bearer_auth = var.apim_token
-}
+provider "apim" {}
 
 resource "apim_apiv4" "partner_multi_tenant" {
   organization_id = "38907341-741d-42af-9073-41741de2af61"
@@ -82,7 +74,7 @@ resource "apim_apiv4" "partner_multi_tenant" {
       type   = "API"
       mode   = "STANDARD"
       security = {
-      type = "KEY_LESS"
+        type = "KEY_LESS"
       }
     }
   ]

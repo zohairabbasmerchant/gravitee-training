@@ -8,7 +8,7 @@ jobs:
   terraform:
     runs-on: ubuntu-latest
     env:
-      TF_VAR_apim_token: ${{ secrets.APIM_TOKEN }}
+      APIM_CLOUD_TOKEN: ${{ secrets.APIM_CLOUD_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
