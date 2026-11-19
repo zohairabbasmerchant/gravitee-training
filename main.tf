@@ -7,7 +7,14 @@ terraform {
   }
 }
 
-provider "apim" {}
+variable "apim_cloud_token" {
+  type      = string
+  sensitive = true
+}
+
+provider "apim" {
+  cloud_auth = var.apim_cloud_token
+}
 
 resource "apim_apiv4" "partner_multi_tenant" {
   organization_id = "38907341-741d-42af-9073-41741de2af61"
