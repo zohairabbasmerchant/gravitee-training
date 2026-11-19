@@ -13,7 +13,7 @@ variable "apim_token" {
 }
 
 provider "apim" {
-  server_url  = "https://org-gravitee-ps-partner-enablement.eu.c479c6.gamma-api.gravitee.io/management/v2"
+  server_url  = "https://org-gravitee-ps-partner-enablement.eu.c479c6.gamma-api.gravitee.io/automation"
   bearer_auth = var.apim_token
 }
 
