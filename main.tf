@@ -74,15 +74,16 @@ resource "apim_apiv4" "partner_multi_tenant" {
     }
   ]
 
-  plans = {
-    "keyless-plan" = {
+  plans = [
+    {
+      hrid   = "keyless-plan"
       name   = "Open Keyless Plan"
       status = "PUBLISHED"
       type   = "API"
       mode   = "STANDARD"
       security = {
-        type = "KEY_LESS"
+      type = "KEY_LESS"
       }
     }
-  }
+  ]
 }
